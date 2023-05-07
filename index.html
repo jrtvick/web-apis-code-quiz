@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Gave the webpage a clear, descriptive title.-->
+    <title>Web APIs: Code Quiz</title>
+<!--Linked my reset and style sheets.-->
+    <link rel="resetsheet" href="./develop/reset.css" />
+    <link rel="stylesheet" href="./develop/style.css" />
+</head>
+
+<!--Entire webpage exists within the body tags.-->
+<body>
+
+<!--Beginning with the header, gives the webpage some structure and a proper, visible title.-->
+    <header>
+        <h1>Challenge 04: Web APIs: Code Quiz</h1>
+    </header>
+
+<!--This main section is where the majority of the action happens. This is where the game and score data displays.-->
+    <main>
+
+<!--This section keeps track of the high score, the timer, and the current score.-->
+        <section>
+            <h2></h2>
+            <h2 class="countdown"></h2>
+            <h2></h2>
+        </section>
+
+<!--This div holds the quiz inside of it.-->
+
+        <div>
+<!--The h2 tags represent the current question being asked.-->
+            <h3></h3>
+
+<!--The list houses all of the possible answers to the current question.-->
+            <ul>
+
+<!--These list obects represent all possible answers.-->
+                <li><button id="a">a</button></li>
+                <li><button id="b">b</button></li>
+                <li><button id="c">c</button></li>
+                <li><button id="d">d</button></li>
+            </ul>
+        </div>
+
+<!--This button begins the timer and game.-->
+        <button id="start" class="btn">Start Game</button>
+    </main>
+
+<!--Added in a small footer to give the page some structure and detail.-->
+    <footer>
+        <h4> &copy; <a href="https://github.com/jrtvick">Tyler Vick</a>, 2023 </h4>
+    </footer>
+
+<!--Linked my javascript file.-->
+    <script src="script.js"></script>
+</body>
+
+</html>
