@@ -24,14 +24,21 @@
 
 <!--This section keeps track of the high score, the timer, and the current score.-->
         <section>
-            <h2></h2>
-            <h2 class="countdown"></h2>
-            <h2></h2>
+            <aside>
+                <h2>Highscore:
+                    User:
+                </h2>
+            </aside>
+            <h2 class="countdown">Timer:</h2>
+            <aside>
+                <h2>current score:</h2>
+                <button class="reset-button">Reset Score</button>
+            </aside>
         </section>
 
 <!--This div holds the quiz inside of it.-->
-
         <div>
+
 <!--The h2 tags represent the current question being asked.-->
             <h3></h3>
 
@@ -39,15 +46,15 @@
             <ul>
 
 <!--These list obects represent all possible answers.-->
-                <li><button id="a">a</button></li>
-                <li><button id="b">b</button></li>
-                <li><button id="c">c</button></li>
-                <li><button id="d">d</button></li>
+                <li><button id="a">►</button><p>a</p></li>
+                <li><button id="b">►</button><p>b</p></li>
+                <li><button id="c">►</button><p>c</p></li>
+                <li><button id="d">►</button><p>d</p></li>
             </ul>
         </div>
 
 <!--This button begins the timer and game.-->
-        <button id="start" class="btn">Start Game</button>
+        <button id="start-button" class="btn">Start Game</button>
     </main>
 
 <!--Added in a small footer to give the page some structure and detail.-->

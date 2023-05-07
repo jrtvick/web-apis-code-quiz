@@ -18,7 +18,48 @@ h1 {
     font-style: italic;
 }
 
-#a {
+
+main {
+    flex-grow: 1;
+}
+
+/* Here I am styling the content of the quiz to display in an appealing and clear way. */
+section {
+    display: inline-flex;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* trying to make the buttons bigger */
+#a #b #c #d {
+    tab-size: 5px;
+}
+
+p {
+    display: inline-flex;
     font-family: Arial, Helvetica, sans-serif;
     font-style: bold;
+    padding-left: 20px;
+}
+
+
+
+/* Added some subtle style in the footer to link my name to my github profile. */
+footer {
+    align-self: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    cursor: crosshair;
+    color: coral;
+}
+
+a:visited {
+    text-decoration: none;
 }
