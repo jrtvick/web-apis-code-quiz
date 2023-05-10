@@ -20,15 +20,19 @@ h1 {
 
 
 main {
+    display:grid;
+    border: 2px solid red;
     flex-grow: 1;
+    justify-items: center;
 }
 
 /* Here I am styling the content of the quiz to display in an appealing and clear way. */
 section {
+    width: 100%;
+    padding: 0 25px 0 25px;
     display: inline-flex;
     align-content: center;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 /* trying to make the buttons bigger */

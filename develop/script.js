@@ -1,76 +1,83 @@
 // Establish global variables
-var startButton = document.querySelector(".start-button");
+var startButton = document.querySelectorAll(".start-button");
+var timeEl = document.querySelector(".countdown");
+var secondsLeft = 60;
+var winGame = false;
+
 
 // Create a function for the game starting
-function startGame() {
+// function startGame() {
+//   setTime();
+// }
 
-}
+let start = document.querySelector('#start-button');
+
+start.addEventListener('click', function () {
+  setTime();
+  let i = 0;
+
+  setInterval(function () {
+    console.log(++i);
+  }, 1000);
+});
+
 
 // Create a current score tracker
 
-// Create a timer function that launches upon start button being clicked
+
 // Create a function in which the clock decreases by a set amount of seconds if a wrong answer is selected
 // Create local saves for highscore value and the player's initials
 
-// function setTime() {
-//     // Sets interval in variable
-//     var timerInterval = setInterval(function() {
-//       secondsLeft--;
-//       timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
-  
-//       if(secondsLeft === 0) {
-//         // Stops execution of action at set interval
-//         clearInterval(timerInterval);
-//         // Calls function to create and append image
-//         sendMessage();
-//       }
-  
-//     }, 1000);
-//   }
+
+// This is a timer function that launches upon start button being clicked. When the time reaches 0 seconds, the user is prompted to input their initials.
+function setTime() {
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    timeEl.textContent = "Time Remaining: " + secondsLeft + " seconds";
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+      alert("Game Over.");
+      prompt("Please input your initials. \n\nClick OK to continue.");
+    }
+  }, 1000);
+}
+
+// Trying to create a win game function
+function winGame() {
+  if (secondsLeft > 0 && winGame === true) {
+    clearInterval(timerInterval);
+    alert("You win!");
+    prompt("Please input your initials. \n\nClick OK to continue.");
+  }
+}
+
+
+let names = JSON.parse(localStorage.getItem("names")) || []
+let questionsAnswers = [{
+  text: "What is javascript?",
+  choices: ["A. annoying", "B. complicated", "C. not easy to learn", "D. all of the above"],
+  answer: "D. all of the above"
+},
+{
+  text: "What is javascript?",
+  choices: ["A. annoying", "B. complicated", "C. not easy to learn", "D. all of the above"],
+  answer: "D. all of the above"
+}]
+
+let currentQuestion = 0;
 
 
 
 
-//   var counter = document.querySelector("#counter");
-//   var addButton = document.querySelector("#add");
-//   var subtractButton = document.querySelector("#subtract");
-  
-//   var count = localStorage.getItem("count");
-  
-//   counter.textContent = count;
-  
-//   addButton.addEventListener("click", function() {
-//     if (count < 24) {
-//       count++;
-//       counter.textContent = count;
-//       localStorage.setItem("count", count);
-//     }
-//   });
-  
-//   subtractButton.addEventListener("click", function() {
-//     if (count > 0) {
-//       count--;
-//       counter.textContent = count;
-//       localStorage.setItem("count", count);
-//     }
-//   });
 
 
 
-//   saveButton.addEventListener("click", function(event) {
-//     event.preventDefault();
 
-//   var studentGrade = {
-//     student: student.value,
-//     grade: grade.value,
-//     comment: comment.value.trim()
-//   };
-  
 //   localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
 //   renderMessage();
-  
+
 //   });
-  
+
 //   function renderMessage() {
 //     var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
 //     if (lastGrade !== null) {
@@ -86,12 +93,14 @@ function startGame() {
 
 // Create an alert for end of game + final score
 
-if (timer === 0) {
-    alert("Game over. Final score:" + currentScore(""));
-} 
+// if (timer === 0) {
+//     alert("Game over. Final score:" + currentScore(""));
+// } 
 
-// Create an event listener for the start game button being pressed
-startButton.addEventListener("click", startGame);
+
+
+
+
 
 
 
@@ -108,3 +117,4 @@ function resetGame() {
 }
 
 resetButton.addEventListener("click", resetGame);
+
