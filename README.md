@@ -2,7 +2,7 @@
 
 ## Description
 
-I set out to create a javascript file that would generate a random password for the user. I built this project to test my knowledge of javascript and expand on what I had learned in class through outside research. This project solves the problem of coming up with a randomized and best-practice password for users who are signing up for web accounts. This entire experience was a learning experience as javascript is brand new to me and still largely overwhelming, but specifically I learned about using the Math variable with the floor and random methods to generate random results, and how certain aspects of HTML such as classes and ids tie into the javascript process.
+I set out to create a javascript file that would lead the user through. I built this project to test my knowledge of JavaScript web APIs and expand on what I had learned in class through outside research. This entire experience was a learning experience as JavaScript and web APIs are brand new to me and still overwhelming, but specifically I learned about using timers, event listeners, arrays,  and query selectors.
 
 ## Installation
 
@@ -10,12 +10,13 @@ N/A
 
 ## Usage
 
-![screenshot of Password Generator supplying a randomized series of characters](./assets/images/Screenshot%20for%20PW%20generator.png)
-
-The URL of the deployed application: https://jrtvick.github.io/Javascript-Password-Generator/
+To be added: screenshot of deployed webpage
 
 
-The URL of the GitHub repository: https://github.com/jrtvick/Javascript-Password-Generator
+The URL of the deployed application: https://jrtvick.github.io/web-apis-code-quiz/
+
+
+The URL of the GitHub repository: https://github.com/jrtvick/web-apis-code-quiz
 
 ## Credits
 
@@ -25,7 +26,9 @@ https://eloquentjavascript.net/Eloquent_JavaScript_small.pdf
 
 https://code.mu/en/javascript/book/prime/timers/launch-button/
 
+https://www.w3schools.com/js/js_loop_for.asp
 
+https://developer.mozilla.org/en-US/docs/Web/API/Element/append
 
 https://choosealicense.com/licenses/mit/
 

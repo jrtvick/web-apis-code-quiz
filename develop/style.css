@@ -21,7 +21,6 @@ h1 {
 
 main {
     display:grid;
-    border: 2px solid red;
     flex-grow: 1;
     justify-items: center;
 }
@@ -47,7 +46,20 @@ p {
     padding-left: 20px;
 }
 
+.btn {
+    height: 50%;
+    font-size: larger;
+    color: white;
+    background-color: red;
+    padding-left: 50px;
+    padding-right: 50px;
+}
 
+
+input {
+    height:min-content;
+    width: min-content;
+}
 
 /* Added some subtle style in the footer to link my name to my github profile. */
 footer {
