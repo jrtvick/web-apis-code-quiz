@@ -1,49 +1,82 @@
-// Establish global variables
-var startButton = document.querySelectorAll(".start-button");
-var timeEl = document.querySelector(".countdown");
-var secondsLeft = 60;
-var winGame = false;
+// Establish all global variables for the game.
+var startButton = document.querySelector("#start-button");
+var timeEl = document.querySelector("#countdown");
+var secondsLeft = 60; // This is how much time is left in the game.
+var winGame = false; // Setting up the winGame variable to be false, so that certain events happen when it becomes true.
+var resetGame = document.querySelector("#reset-button");
+var question = document.querySelector("#question");
+var optionOne = document.querySelector("#option-1");
+var optionTwo = document.querySelector("#option-2");
+var optionThree = document.querySelector("#option-3");
+var optionFour = document.querySelector("#option-4");
+var currentQuestion = 0;   // This is the current question counter.
+// var currentScore = document.querySelector("#score-display");
 
 
-// Create a function for the game starting
+function init() {
+  currentQuestion = 0;
+}
+
+function init() {
+  currentScore = 0;
+}
+// This is a timer function that starts when the start game button is clicked. When the time reaches 0 seconds, the user is displayed a game over alert.
+function startGame() {
+  setTime();
+  getQuestion();
+  // Prevents start button from being clicked when round is in progress
+  startButton.disabled = true;
+}
+function setTime() {
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    timeEl.textContent = "Time Remaining: " + secondsLeft + " seconds";
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+      alert("Game Over.");
+    }
+  }, 1000);
+}
+
+
+// First question displaying all four options. 
+function getQuestion() {
+  question.textContent = questionsAnswers[currentQuestion].text;   // This displays the question
+  optionOne.textContent = questionsAnswers[currentQuestion].choices[0];  // These four lines display the options
+  optionTwo.textContent = questionsAnswers[currentQuestion].choices[1];
+  optionThree.textContent = questionsAnswers[currentQuestion].choices[2];
+  optionFour.textContent = questionsAnswers[currentQuestion].choices[3];
+  currentQuestion = currentQuestion + 1;
+}
+
+
+
+// Create local saves for highscore value and the player's initials
+// Took a lot of this from a confusing tutoring session, not sure exactly how to make it work for me
+
 // function startGame() {
-//   setTime();
+//   let name = document.querySelector("#username").value;
+//   names.push(name);
+//   localStorage.setItem("names", JSON.stringify(names))
+//   document.querySelector("#questionSection").appendChild(header)
+//   let choices = document.createElement("div");
+//   choices.id = "choices"
+//   for (i = 0; i < questionsAnswers[currentQuestion].choices.length; i++) {
+//     let button = document.createElement("button");
+//     button.innerText = questionsAnswers[currentQuestion].choices[i];
+//     choices.appendChild(button)
+//   }
+//   document.querySelector("#questionSection").appendChild(choices)
+//   document.querySelector("#choices").addEventListener("click", questionCheck)
 // }
 
-let start = document.querySelector('#start-button');
 
-start.addEventListener('click', function () {
-  // prompt("Please input your initials. \n\nClick OK to continue.");
-  setTime();
-  let i = 0;
-
-  setInterval(function () {
-    console.log(++i);
-  }, 1000);
-});
-
-// Took a lot of this from a confusing tutoring session, not sure exactly how to make it work for me
-function startGame() {
-  let name = document.querySelector("#username").value;
-  names.push(name);
-  localStorage.setItem("names", JSON.stringify(names))
-  document.querySelector("#questionSection").appendChild(header)
-  let choices = document.createElement("div");
-  choices.id = "choices"
-  for (i = 0; i < questionsAnswers[currentQuestion].choices.length; i++) {
-    let button = document.createElement("button");
-    button.innerText = questionsAnswers[currentQuestion].choices[i];
-    choices.appendChild(button)
-  }
-  document.querySelector("#questionSection").appendChild(choices)
-  document.querySelector("#choices").addEventListener("click", questionCheck)
-}
 
 // Create a current score tracker
 
 
-// Create a function in which the clock decreases by a set amount of seconds if a wrong answer is selected
-// Create local saves for highscore value and the player's initials
+
+
 
 
 
@@ -66,7 +99,7 @@ let questionsAnswers = [{
   answer: "A. Document Object Model"
 },
 {
-  text: "Why append () in Java?",
+  text: "Why append () in JavaScript?",
   choices: ["A. To add or remove intergers from your code", "B. To link the JavaScript file in your HTML", "C. To append or add data in a file", "D. You would never append in Java"],
   answer: "C. To append or add data in a file"
 },
@@ -76,35 +109,47 @@ let questionsAnswers = [{
   answer: "C. A user interaction with the keyboard"
 }]
 
-let currentQuestion = 0;
 
+
+
+function checkAnswer(answer) {
+  if (answer === correctAnswer) {
+    score + 10; // Increment score
+    updateScoreDisplay(); // Update score display
+  }
+}
+
+// Function to update the score display
+function updateScoreDisplay() {
+  var scoreDisplay = document.getElementById('#score-display');
+  scoreDisplay.textContent = `Score: ${score}`;
+}
+
+
+
+// Create a function in which the clock decreases by a set amount of seconds if a wrong answer is selected
 // Trying to create a function to move through the questions, and decrease time if an incorrect answer is given
-function questionCheck(event) {
-  if (event.target.innerText === questionsAnswers[currentQuestion].answer) {
+// function questionCheck(event) {
+//   if (event.target.innerText === questionsAnswers[currentQuestion].answer) {
+//     currentScore + 10
+//   }
+//   else {
+//     time - 10
+//   }
+//   currentQuestion++;
 
-  }
-  else {
-      time-10
-  }
-  currentQuestion++;
+// document.querySelector("#choices").innerHTML = ""
+// //make function here that rewrites the question Div here - hint, use the for loop on line 32
+// for (i = 0; i < questionsAnswers[currentQuestion].choices.length; i++) {
+//   let button = document.createElement("button");
+//   button.innerText = questionsAnswers[currentQuestion].choices[i];
+//   choices.appendChild(button)
+// }
+// }
 
-  document.querySelector("#choices").innerHTML = ""
-  //make function here that rewrites the question Div here - hint, use the for loop on line 32
-}
 
-// This is a timer function that launches upon start button being clicked. When the time reaches 0 seconds, the user is prompted to input their initials.
-function setTime() {
-  var timerInterval = setInterval(function () {
-    secondsLeft--;
-    timeEl.textContent = "Time Remaining: " + secondsLeft + " seconds";
-    if (secondsLeft === 0) {
-      clearInterval(timerInterval);
-      alert("Game Over.");
-    }
-  }, 1000);
-}
 
-// Trying to create a win game function
+// Trying to create a win game function. Include initials + scored saved to localstorage
 function winGame() {
   if (secondsLeft > 0 && winGame === true) {
     clearInterval(timerInterval);
@@ -116,31 +161,33 @@ function winGame() {
 
 
 
+// These are my event listeners for making the buttons function to start the game and move through the questions.
+startButton.addEventListener('click', startGame);
 
-// Create an alert for end of game + final score
-
-// if (timer === 0) {
-//     alert("Game over. Final score:" + currentScore(""));
-// } 
-
-
-
-
+// Create event listeners for all option buttons to display next question once they are pressed
+optionOne.addEventListener('click', getQuestion);
+optionTwo.addEventListener('click', getQuestion);
+optionThree.addEventListener('click', getQuestion);
+optionFour.addEventListener('click', getQuestion);
 
 
 
 
-// Create a global variable + function + event listener for the reset button being pressed
-var resetButton = document.querySelector(".reset-button");
+init();
 
-function resetGame() {
-  // Resets win and loss counts
-  winCounter = 0;
-  loseCounter = 0;
-  // Renders win and loss counts and sets them into client storage
-  setWins()
-  setLosses()
-}
 
-resetButton.addEventListener("click", resetGame);
 
+
+// function resetGame() {
+//   var resetButton = document.getElementById("#reset-button");
+//   resetButton.addEventListener("click", function () {
+//     location.reload();
+//   });
+
+
+//   resetButton.addEventListener("click", resetGame);
+// };
+
+
+// useful
+//document.body.appendChild(secondTag);

@@ -18,6 +18,9 @@ h1 {
     font-style: italic;
 }
 
+aside:hover {
+    text-decoration: underline;
+}
 
 main {
     display:grid;
@@ -46,17 +49,24 @@ p {
     padding-left: 20px;
 }
 
-.btn {
+#start-button {
     height: 50%;
     font-size: larger;
-    color: white;
-    background-color: red;
+    color: black;
+    background-color: yellow;
     padding-left: 50px;
     padding-right: 50px;
 }
 
+#start-button:hover {
+    color: white;
+    background-color: red;
+}
+
 
 input {
+    position: relative;
+    top: 110px;
     height:min-content;
     width: min-content;
 }

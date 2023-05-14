@@ -27,10 +27,11 @@
             <aside>
                 <h2>Highscore</h2>
             </aside>
-            <h2 class="countdown">Want to play? Press the "Start Game" Button!</h2>
+            <h2 id="countdown" class="countdown">Want to play? Press the "Start Game" Button!</h2>
             <aside>
                 <h2>Current Score</h2>
-                <button class="reset-button">Reset Score</button>
+                <p id="score-display"></p>
+                <!-- <button id="reset-button" class="reset-button">Reset Game</button> -->
             </aside>
         </section>
 
@@ -38,12 +39,18 @@
         <div>
             
 <!--The h2 tags represent the current question being asked.-->
-            <h3 id="choices"></h3>
+            <h3 id="question"></h3>
+            <ul>
+                <button id="option-1"></button>
+                <button id="option-2"></button>
+                <button id="option-3"></button>
+                <button id="option-4"></button>
+            </ul>
         </div>
 
 <!--This button begins the timer and game.-->
         <input type="text" id="username" placeholder="Write your initials here">
-        <button id="start-button" class="btn">Start Game</button>
+        <button id="start-button">Start Game</button>
     </main>
 
 <!--Added in a small footer to give the page some structure and detail.-->
