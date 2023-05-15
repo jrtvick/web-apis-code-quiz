@@ -10,9 +10,9 @@ N/A
 
 ## Usage
 
-![Tyler Vick's Code Quiz One](./assets/images/code-quiz-screen-shot-1.png.png)
+![Tyler Vick's Code Quiz One](./assets/images/code-quiz-screen-shot-1.png)
 
-![Tyler Vick's Code Quiz Two](./assets/images/code-quiz-screen-shot-2.png.png)
+![Tyler Vick's Code Quiz Two](./assets/images/code-quiz-screen-shot-2.png)
 
 
 The URL of the deployed application: https://jrtvick.github.io/web-apis-code-quiz/
