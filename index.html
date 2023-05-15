@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--Gave the webpage a clear, descriptive title.-->
+    <!--Gave the webpage a clear, descriptive title.-->
     <title>Web APIs: Code Quiz</title>
-<!--Linked my reset and style sheets.-->
-    <link rel="resetsheet" href="./develop/reset.css" />
-    <link rel="stylesheet" href="./develop/style.css" />
+    <!--Linked my reset and style sheets.-->
+    <link rel="resetsheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
 </head>
 
 <!--Entire webpage exists within the body tags.-->
+
 <body>
 
-<!--Beginning with the header, gives the webpage some structure and a proper, visible title.-->
+    <!--Beginning with the header, gives the webpage some structure and a proper, visible title.-->
     <header>
         <h1>Challenge 04: Web APIs: Code Quiz</h1>
     </header>
 
-<!--This main section is where the majority of the action happens. This is where the game and score data displays.-->
+    <!--This main section is where the majority of the action happens. This is where the game and score data displays.-->
     <main>
 
-<!--This section keeps track of the high score, the timer, and the current score.-->
+        <!--This section keeps track of the high score, the timer, and the current score.-->
         <section>
             <aside>
                 <h2>Highscore</h2>
-            </aside>
-            <h2 id="countdown" class="countdown">Want to play? Press the "Start Game" Button!</h2>
-            <aside>
-                <h2>Current Score</h2>
-                <p id="score-display"></p>
-                <!-- <button id="reset-button" class="reset-button">Reset Game</button> -->
+                <ul id="score-container"></ul>
+                <button id="clear-button">Clear</button>
             </aside>
         </section>
-
-<!--This div holds the quiz inside of it.-->
+        <div id="play">
+            <h2 id="countdown" class="countdown">Want to play? Press the "Start Game" Button!</h2>
+        </div>
+        <!--This div holds the quiz inside of it.-->
         <div>
-            
-<!--The h2 tags represent the current question being asked, while the buttons show the user a list of four possible answers to choose from.-->
+
+            <!--The h2 tags represent the current question being asked, while the buttons show the user a list of four possible answers to choose from.-->
             <h3 id="question-area"></h3>
             <ul class="hide" id="answers">
                 <button id="option-1"></button>
@@ -48,18 +48,19 @@
             </ul>
         </div>
 
-<!--This button begins the timer and game.-->
+        <!--This button begins the timer and game.-->
         <input type="text" id="username" placeholder="Write your initials here">
+        <button type="submit" id="submit-button" class="hide">Submit</button>
         <button id="start-button">Start Game</button>
     </main>
 
-<!--Added in a small footer to give the page some structure and detail.-->
+    <!--Added in a small footer to give the page some structure and detail.-->
     <footer>
         <h4> &copy; <a href="https://github.com/jrtvick">Tyler Vick</a>, 2023 </h4>
     </footer>
 
-<!--Linked my javascript file.-->
-    <script src="./develop/script.js"></script>
+    <!--Linked my javascript file.-->
+    <script src="./script.js"></script>
 </body>
 
 </html>
